@@ -47,6 +47,7 @@ exports.user_signup = (req,res,next)=>{
 };
 
 exports.user_login = (req,res,next)=>{
+  console.log(1)
   User.find({email:req.body.email})
     .exec()
     .then(users => {
@@ -58,6 +59,7 @@ exports.user_login = (req,res,next)=>{
 
       bcrypt.compare(req.body.password, users[0].password, (err, result) => {
         if(err){
+          console.log(err)
           return res.status(401).json({
             message:'Auth failed'
           });
@@ -69,7 +71,7 @@ exports.user_login = (req,res,next)=>{
             email:users[0].email,
             userId:users[0]._id
             },
-            process.env.JWT_KEY,
+              'ssss',
             {
               expiresIn:"1h"
             }
