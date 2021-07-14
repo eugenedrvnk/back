@@ -10,9 +10,9 @@ const productSchema = mongoose.Schema({
     type: Number,
     required:true
   },
-  productImage:{
-    type:String,
-    required:true
+  country: {
+    type: String,
+    required: true
   }
 });
 
