@@ -31,8 +31,8 @@ exports.products_get_all = (req, res, next) => {
             })
 
             const response = {
-                page,
-                perPage,
+                page: +page,
+                perPage: +perPage,
                 totalCount,
                 data: products
             }
