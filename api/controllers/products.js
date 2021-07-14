@@ -7,7 +7,7 @@ exports.products_get_all = (req, res, next) => {
         .exec()
         .then(docs => {
             const {minPrice, maxPrice, page = 1, perPage = 50, country} = req.query;
-            
+
             let products = docs;
             products = products.filter((product) => {
                 if (minPrice && product.price < minPrice) return;
