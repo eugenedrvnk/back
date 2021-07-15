@@ -6,7 +6,7 @@ const orderRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/user');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+// const cors = require('cors');
 
 const dotenv = require('dotenv');
 dotenv.config();
@@ -24,7 +24,7 @@ mongoose.connect(process.env.DATABASE,
   if(process.env.NODE_ENV !== 'test'){
     app.use(morgan('dev'));
   }
-  app.use(cors())
+  // app.use(cors())
 
 //set uploads to be a public path
   app.use('/uploads',express.static('uploads'));
