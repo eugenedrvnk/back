@@ -2,7 +2,6 @@ const Product = require('../models/products');
 const mongoose = require('mongoose');
 
 exports.products_get_all = (req, res, next) => {
-    console.log(222222222222)
     Product.find()
         .select('name price _id country') //only grab these fields
         .exec()
